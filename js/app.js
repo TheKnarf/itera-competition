@@ -4,7 +4,7 @@ var app = angular.module('app', [
 
 app.controller('HomeCtrl', function($scope, $http) {
   
-    $scope.buttonSelect = {'loan':2000000, 'startDateMonth':5, 'rate':3.45, 'paymentTime':10, 'startDateYear':2064};    
+    $scope.buttonSelect = {'loan':2000000, 'startDateMonth':11, 'rate':3.45, 'paymentTime':10, 'startDateYear':2014};    
     
     var loanRaisingMonth = 'loanRaisingMonth=';
     // Parameters to send
@@ -51,7 +51,7 @@ app.controller('HomeCtrl', function($scope, $http) {
             
     }
     
-    
+    $scope.result = [];
     var loanRaisingMonth = "loanRaisingMonth=" + $scope.buttonSelect.startDateMonth;
     var loanRaisingYear = "loanRaisingYear=" + $scope.buttonSelect.startDateYear;
     var prinicpalAmount = "principalAmount=" + $scope.buttonSelect.loan;
@@ -75,7 +75,12 @@ app.controller('HomeCtrl', function($scope, $http) {
             error(function(data, status, headers, config) {
                 console.log('error');
           });
-     };    
+     };   
+    
+    $scope.buildDate = function(date) {
+        var d = new Date(date);
+        return "" + d.getMonth() + "/" + d.getFullYear();
+    }
     
 })
 .directive('numbersOnly', function(){
