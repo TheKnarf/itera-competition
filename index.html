@@ -52,28 +52,30 @@
                 <span>Nedbetaling (måneder)</span>
                 <input type="text" ng-model="buttonSelect.paymentTime" value="24" numbers-only />
             </label>
+            <button ng-click="calc()">Kalkuler</button>
+
         </form>
         <div>
             <h1>Nedbetaling</h1>
             <div>
                 <span>Effektiv rente:</span>
-                <span></span>
+                <span> {{ result.effectiveAnnualPercentageRate | number:2 }}</span>
             </div>
             <div>
                 <span>Innløsningsdato:</span>
-                <span></span>
+                <span>{{ result.redemptionDate | number:2 }}</span>
             </div>
             <div>
                 <span>Totalsum gebyrer:</span>
-                <span></span>
+                <span>{{ result.sumFees | number:2 }}</span>
             </div>
             <div>
                 <span>Totalsum skattefradrag:</span>
-                <span></span>
+                <span>{{ result.sumTaxDeductions | number:2 }}</span>
             </div>
             <div>
                 <span>Totalsum å betale:</span>
-                <span></span>
+                <span>{{ result.sumPayments | number:2 }}</span>
             </div>
                 
             <br /> <br />
@@ -88,9 +90,14 @@
                     <td> Skatte fradrag </td>
                     <td> Innbetaling </td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
+                <tr ng-repeat="res in result.amortizationSchedule">
+                    <td>{{ res.date }}</td>
+                    <td>{{ res.balance }}</td>
+                    <td>{{ res.fee }}</td>
+                    <td>{{ res.principal }}</td>
+                    <td>{{ res.balance }}</td>
+                    <td>{{ res.taxDeduction }}</td>
+                    <td>{{ res.payment | number:2 }}</td>
                     <td></td>
                 </tr>
             </table>
