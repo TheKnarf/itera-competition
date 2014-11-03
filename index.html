@@ -29,7 +29,7 @@
                 <span>Start Dato</span>
                 <input type="text" ng-model="buttonSelect.startDateYear" placeholder="2014" />
                 
-                <select type="text" ng-model="buttonSelect.startDateMonth" placeholder="Jan"> 
+                <select type="text" ng-model="buttonSelect.startDateMonth" placeholder="Jan" numbers-only> 
                     <option value="01" selected="selected">Jan</option>
                     <option value="02">Feb</option>
                     <option value="03">Mar</option>
@@ -46,17 +46,24 @@
             </label>
             <label>
                 <span>Rente</span>
-                <input type="text" ng-model="buttonSelect.rate" value="3.45" />
+                <input type="text" ng-model="buttonSelect.rate" value="3.45"  numbers-dot-only/>
             </label>
             <label>
                 <span>Nedbetaling (måneder)</span>
-                <input type="text" ng-model="buttonSelect.paymentTime" value="24" />
+                <input type="text" ng-model="buttonSelect.paymentTime" value="24" numbers-only />
             </label>
         </form>
         <div>
             <h1>Nedbetaling</h1>
             <span>Total sum å betale:</span>
             <span></span>
+            
+            <table>
+                <tr>
+                    <td> Dato </td>
+                    <td> </td>
+                </tr>
+            </table>
         </div>
     </div>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
