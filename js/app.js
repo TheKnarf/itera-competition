@@ -2,13 +2,14 @@ var app = angular.module('app', [
     'ngRoute'
 ]);
 
-app.controller('HomeCtrl', function($scope, $http){
+app.controller('HomeCtrl', function($scope, $http) {
   
     $scope.buttonSelect = {'loan':2000000, 'startDateMonth':5, 'rate':3.45, 'paymentTime':10, 'startDateYear':2064};    
     
+    var loanRaisingMonth = 'loanRaisingMonth=';
     // Parameters to send
     switch($scope.buttonSelect.startDateMonth) {
-            var loanRaisingMonth = 'loanRaisingMonth=';
+            
             case 'Jan': 
                 loanRaisingMonth += 1; 
                 break;
@@ -56,7 +57,7 @@ app.controller('HomeCtrl', function($scope, $http){
     var prinicpalAmount = "principalAmount=" + $scope.buttonSelect.loan;
     var annualNominalInterestRate = "annualNominalInterestRate=" + $scope.buttonSelect.rate;
     var totalNumberOfPayments = "totalNumberOfPayments=" + $scope.buttonSelect.paymentTime;
-    var fullURL = 'http://localhost/?' +
+    var fullURL = 'bolig.php?' +
         loanRaisingMonth + '&' + 
         loanRaisingYear + '&' + 
         prinicpalAmount + '&' + 
@@ -73,7 +74,24 @@ app.controller('HomeCtrl', function($scope, $http){
         console.log('error');
     // called asynchronously if an error occurs
     // or server returns response with an error status.
-    });
   });
     
+})
+.directive('numbersOnly', function(){
+   return {
+     require: 'ngModel',
+     link: function(scope, element, attrs, modelCtrl) {
+       modelCtrl.$parsers.push(function (inputValue) {
+           if (inputValue == undefined) return '' 
+           var transformedInput = inputValue.replace(/[^0-9]/g, ''); 
+           if (transformedInput!=inputValue) {
+              modelCtrl.$setViewValue(transformedInput);
+              modelCtrl.$render();
+           }         
+
+           return transformedInput;         
+       });
+     }
+   };
 });
+
