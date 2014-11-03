@@ -26,10 +26,10 @@ angular.module('iteraApp')
     $http.get('https://cfs-ws-itera.cicero.no/cfp/6/ws/rest/calculator/calculateLoan?' + loanRaisingMonth + '&' + loanRaisingYear + '&' + prinicpalAmount + '&' + annualNominalInterestRate + '&' + annualNominalInterestRate + '&' + totalNumberOfPayments).
     success(function(data, status, headers, config) {
         console.log(data);
-  }).
-  error(function(data, status, headers, config) {
-        consol.log('error');
+    }).
+    error(function(data, status, headers, config) {
+        console.log('error');
     // called asynchronously if an error occurs
     // or server returns response with an error status.
-  });
+    });
   });
