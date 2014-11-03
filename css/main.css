@@ -120,3 +120,12 @@ header h1 {
     color: grey;
     display: inline-block;
 }
+
+table {
+    width: 100%;
+}
+
+table tr:first-child {
+    background: black;
+    color: white;
+}
