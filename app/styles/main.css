@@ -80,6 +80,10 @@ body {
 
 /* Custom */
 
+header .logo {
+    height: 100px;
+}
+
 .loanForm :focus {outline:none;}
 
 .loanForm > * {
