@@ -77,3 +77,28 @@ body {
     border-bottom: 0;
   }
 }
+
+/* Custom */
+
+.loanForm :focus {outline:none;}
+
+.loanForm > * {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    display: block;
+    font-weight: normal;
+}
+
+.loanForm > * input {
+    float: right;
+    border: 0;
+    display: inline-block;
+    padding: 10px;
+    margin-top: -10px;
+}
+
+.loanForm > * span {
+    color: grey;
+}
