@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+	<title>Itera</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body ng-controller="HomeCtrl">
+    <div class="container">
+        <header>
+            <h1>Boliglån kalkulator</h1>
+            <img src="images/logo.png" class="logo" />
+        </header>
+
+        <form class="loanForm">
+            <label>
+                <span>Lån</span>
+                <input type="text" ng-model="buttonSelect.loan" placeholder="2 000 000" />
+            </label>
+            <label>
+                <span>Start Dato</span>
+                <input type="text" ng-model="buttonSelect.startDateYear" placeholder="2014" />
+                
+                <select type="text" ng-model="buttonSelect.startDateMonth" placeholder="Jan"> 
+                    <option value="01" selected="selected">Jan</option>
+                    <option value="02">Feb</option>
+                    <option value="03">Mar</option>
+                    <option value="04">Apr</option>
+                    <option value="05">Mai</option>
+                    <option value="06">Jun</option>
+                    <option value="07">Jul</option>
+                    <option value="08">Aug</option>
+                    <option value="09">Sep</option>
+                    <option value="10">Okt</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Des</option>
+                </select>
+            </label>
+            <label>
+                <span>Rente</span>
+                <input type="text" ng-model="buttonSelect.rate" value="3.45" />
+            </label>
+            <label>
+                <span>Nedbetaling (måneder)</span>
+                <input type="text" ng-model="buttonSelect.paymentTime" value="24" />
+            </label>
+        </form>
+    </div>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.9/angular-animate.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

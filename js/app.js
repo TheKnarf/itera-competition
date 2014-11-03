@@ -1,19 +1,10 @@
-'use strict';
+var app = angular.module('app', [
+    'ngRoute'
+]);
 
-/**
- * @ngdoc function
- * @name iteraApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the iteraApp
- */
-angular.module('iteraApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+app.controller('HomeCtrl', function($scope, $http){
+  
+    $scope.buttonSelect = {'loan':0, 'startDateMonth':0, 'loan': 0, 'rate':0, 'paymentTime':0};
     
     // Parameters to send
     switch($scope.buttonSelect.startDateMonth) {
@@ -84,3 +75,5 @@ angular.module('iteraApp')
     // or server returns response with an error status.
     });
   });
+    
+});
