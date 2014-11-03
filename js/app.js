@@ -64,17 +64,18 @@ app.controller('HomeCtrl', function($scope, $http) {
         annualNominalInterestRate + '&' + 
         annualNominalInterestRate + '&' + 
         totalNumberOfPayments;
-     
-    // Simple POST request 
-    $http.get(fullURL).
-    success(function(data, status, headers, config) {
-        $scope.result = data;
-    }).
-    error(function(data, status, headers, config) {
-        console.log('error');
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
-  });
+    
+     $scope.calc = function() {
+        console.log("calc");
+        $http.get(fullURL).
+            success(function(data, status, headers, config) {
+                $scope.result = data;
+                console.log(data);
+            }).
+            error(function(data, status, headers, config) {
+                console.log('error');
+          });
+     };    
     
 })
 .directive('numbersOnly', function(){
