@@ -4,7 +4,7 @@ var app = angular.module('app', [
 
 app.controller('HomeCtrl', function($scope, $http){
   
-    $scope.buttonSelect = {'loan':0, 'startDateMonth':0, 'loan': 0, 'rate':0, 'paymentTime':0};
+    $scope.buttonSelect = {'loan':2000000, 'startDateMonth':5, 'rate':3.45, 'paymentTime':10, 'startDateYear':2064};    
     
     // Parameters to send
     switch($scope.buttonSelect.startDateMonth) {
