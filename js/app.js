@@ -68,7 +68,7 @@ app.controller('HomeCtrl', function($scope, $http) {
     // Simple POST request 
     $http.get(fullURL).
     success(function(data, status, headers, config) {
-        console.log(data);
+        $scope.result = data;
     }).
     error(function(data, status, headers, config) {
         console.log('error');
