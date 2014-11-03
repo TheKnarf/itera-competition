@@ -84,18 +84,22 @@ header .logo {
     height: 100px;
 }
 
+header h1 {
+    float: right;
+}
+
 .loanForm :focus {outline:none;}
 
 .loanForm > * {
     margin: 10px;
     padding: 10px;
     border: 1px solid grey;
-    border-radius: 4px;
+    border-radius: 3px;
     display: block;
     font-weight: normal;
 }
 
-.loanForm > * input {
+.loanForm input {
     float: right;
     border: 0;
     display: inline-block;
@@ -103,6 +107,15 @@ header .logo {
     margin-top: -10px;
 }
 
-.loanForm > * span {
+.loanForm select {
+    float: right;
+    border: 0;
+    display: inline-block;
+    width: 150px;
+    background-color: transparent;
+}
+
+.loanForm span {
     color: grey;
+    display: inline-block;
 }
