@@ -22,23 +22,24 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-        <form>
-            <div>
+        <form class="loanForm">
+            <label>
                 <span>Lån</span>
-                <input type="text" ng-model="buttonSelect.loan" />
-            </div>
-            <div>
+                <input type="text" ng-model="buttonSelect.loan" placeholder="2 000 000" />
+            </label>
+            <label>
                 <span>Start Dato</span>
-                <input type="text" ng-model="buttonSelect.startDate" />
-            </div>
-            <div>
+                <input type="text" ng-model="buttonSelect.startDateYear" placeholder="2014" />
+                <input type="text" ng-model="buttonSelect.startDateMonth" placeholder="Jan" />
+            </label>
+            <label>
                 <span>Rente</span>
-                <input type="text" ng-model="buttonSelect.rate" />
-            </div>
-            <div>
+                <input type="text" ng-model="buttonSelect.rate" value="3.45" />
+            </label>
+            <label>
                 <span>Nedbetaling (måneder)</span>
-                <input type="text" ng-model="buttonSelect.paymentTime" />
-            </div>
+                <input type="text" ng-model="buttonSelect.paymentTime" value="24" />
+            </label>
         </form>
     </div>
 
