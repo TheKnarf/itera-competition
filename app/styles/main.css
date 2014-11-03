@@ -80,6 +80,10 @@ body {
 
 /* Custom */
 
+body {
+    
+}
+
 header .logo {
     height: 100px;
 }
@@ -93,26 +97,27 @@ header h1 {
 .loanForm > * {
     margin: 10px;
     padding: 10px;
-    border: 1px solid grey;
-    border-radius: 3px;
     display: block;
     font-weight: normal;
 }
 
-.loanForm input {
+.loanForm input, .loanForm select {
     float: right;
     border: 0;
     display: inline-block;
+}
+
+.loanForm input {
     padding: 10px;
     margin-top: -10px;
+    border-bottom: 1px solid grey;
 }
 
 .loanForm select {
-    float: right;
-    border: 0;
-    display: inline-block;
     width: 150px;
     background-color: transparent;
+    border-radius: 0;
+    border: 0;
 }
 
 .loanForm span {
