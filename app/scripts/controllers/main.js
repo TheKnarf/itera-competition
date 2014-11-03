@@ -74,7 +74,7 @@ angular.module('iteraApp')
         totalNumberOfPayments;
      
     // Simple POST request 
-    $http.get('https://cfs-ws-itera.cicero.no/cfp/6/ws/rest/calculator/calculateLoan?' + loanRaisingMonth + '&' + loanRaisingYear + '&' + prinicpalAmount + '&' + annualNominalInterestRate + '&' + annualNominalInterestRate + '&' + totalNumberOfPayments).
+    $http.get(fullURL).
     success(function(data, status, headers, config) {
         console.log(data);
     }).
